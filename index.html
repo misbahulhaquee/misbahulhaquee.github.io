@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Misbahul Haque — Journalist & Academic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0e0e0e;
+      --cream: #f5f0e8;
+      --warm-white: #faf7f2;
+      --crimson: #b5161c;
+      --crimson-dark: #8a0f14;
+      --gold: #c9a84c;
+      --mid-gray: #6b6b6b;
+      --light-gray: #d4cfc7;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--warm-white);
+      color: var(--ink);
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    /* ── MASTHEAD ── */
+    .masthead {
+      background: var(--ink);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 3px solid var(--crimson);
+    }
+    .masthead-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 62px;
+    }
+    .masthead-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--cream);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .masthead-name span { color: var(--crimson); }
+    nav { display: flex; gap: 1.8rem; align-items: center; }
+    nav a {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: #888;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--crimson); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 5rem 2rem 4.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--crimson) 0%, var(--gold) 50%, var(--crimson) 100%);
+    }
+    .hero-bg-text {
+      position: absolute;
+      right: -1rem;
+      bottom: -3rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 22rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.025);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: -0.05em;
+    }
+    .hero-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-eyebrow {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 2.5rem;
+      height: 1px;
+      background: var(--crimson);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 900;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      color: var(--cream);
+    }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero-tagline {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1rem;
+      color: #a09888;
+      max-width: 520px;
+      line-height: 1.85;
+      margin-bottom: 2.5rem;
+      font-style: italic;
+    }
+    .hero-meta { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+    .hero-meta-item {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.07em;
+      color: #666;
+      text-transform: uppercase;
+    }
+    .hero-meta-item strong {
+      display: block;
+      color: var(--cream);
+      font-size: 0.86rem;
+      letter-spacing: 0;
+      text-transform: none;
+      font-family: 'Libre Baskerville', serif;
+      margin-top: 0.15rem;
+    }
+
+    /* Hero photo */
+    .hero-photo-wrap { position: relative; flex-shrink: 0; }
+    .hero-photo {
+      width: 260px;
+      height: 340px;
+      background: #1c1c1c;
+      border: 1px solid #2e2e2e;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    .hero-photo .ph-icon {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5rem;
+      font-weight: 900;
+      font-style: italic;
+      color: rgba(201,168,76,0.15);
+    }
+    .hero-photo .ph-hint {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #3a3a3a;
+    }
+    .hero-photo::after {
+      content: '';
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(201,168,76,0.1);
+      pointer-events: none;
+    }
+    .hero-photo-name {
+      background: var(--crimson);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: white;
+      padding: 0.32rem 0.8rem;
+      margin-top: 0.5rem;
+      display: inline-block;
+    }
+
+    /* ── SECTIONS ── */
+    .section { padding: 5.5rem 2rem; }
+    .section-inner { max-width: 1140px; margin: 0 auto; }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 1rem;
+    }
+    .section-number {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.67rem;
+      letter-spacing: 0.22em;
+      color: var(--crimson);
+      text-transform: uppercase;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--cream); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 5rem;
+      align-items: start;
+    }
+    .about-photo-col {}
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: #ddd8ce;
+      border: 1px solid var(--light-gray);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+      position: relative;
+    }
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    .about-photo .ph-icon {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      font-weight: 900;
+      font-style: italic;
+      color: rgba(0,0,0,0.07);
+    }
+    .about-photo .ph-hint {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #bbb;
+    }
+    .about-photo::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(181,22,28,0.12);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .about-photo-caption {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      margin-top: 0.75rem;
+      text-align: center;
+    }
+    .about-lead {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.28rem;
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--ink);
+      margin-bottom: 1.8rem;
+      border-left: 3px solid var(--crimson);
+      padding-left: 1.5rem;
+    }
+    .about-text p {
+      color: #2e2e2e;
+      margin-bottom: 1.15rem;
+      font-size: 0.93rem;
+    }
+    .about-quickinfo {
+      margin-top: 2.5rem;
+      border-top: 1px solid var(--light-gray);
+      padding-top: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .qi-block {}
+    .qi-label {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.63rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 0.6rem;
+    }
+    .qi-list { list-style: none; }
+    .qi-list li {
+      font-size: 0.82rem;
+      padding: 0.28rem 0;
+      color: #444;
+      border-bottom: 1px dotted var(--light-gray);
+      display: flex;
+      gap: 0.4rem;
+      align-items: baseline;
+    }
+    .qi-list li::before {
+      content: '—';
+      color: var(--crimson);
+      font-size: 0.65rem;
+      flex-shrink: 0;
+    }
+
+    /* ── NEWSROOMS ── */
+    #newsrooms { background: var(--warm-white); }
+    .newsroom-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--light-gray);
+      border: 1.5px solid var(--light-gray);
+    }
+    .newsroom-card {
+      background: var(--warm-white);
+      padding: 2rem 1.8rem;
+      transition: background 0.2s;
+    }
+    .newsroom-card:hover { background: #fff; }
+    .newsroom-icon { font-size: 1.6rem; margin-bottom: 0.8rem; display: block; }
+    .newsroom-tag {
+      display: inline-block;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.59rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: var(--crimson);
+      color: white;
+      padding: 0.1rem 0.48rem;
+      margin-bottom: 0.65rem;
+    }
+    .newsroom-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.08rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .newsroom-desc {
+      font-size: 0.79rem;
+      color: var(--mid-gray);
+      line-height: 1.62;
+    }
+
+    /* ── WRITINGS ── */
+    #writings { background: var(--cream); }
+    .writings-intro {
+      font-size: 0.92rem;
+      color: #555;
+      font-style: italic;
+      max-width: 700px;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+    .writings-tabs {
+      display: flex;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid var(--light-gray);
+    }
+    .tab-btn {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 0.65rem 1.4rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #999;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s;
+    }
+    .tab-btn.active { color: var(--crimson); border-bottom-color: var(--crimson); }
+    .tab-btn:hover { color: var(--ink); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .article-list { list-style: none; }
+    .article-item {
+      display: grid;
+      grid-template-columns: 2rem 1fr 3.5rem;
+      gap: 1.2rem;
+      align-items: baseline;
+      padding: 1.05rem 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
+    .article-item:first-child { border-top: 1px solid var(--light-gray); }
+    .article-num {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.63rem;
+      letter-spacing: 0.08em;
+      color: #ccc;
+    }
+    .article-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+      line-height: 1.4;
+      display: block;
+      transition: color 0.2s;
+    }
+    .article-title:hover { color: var(--crimson); }
+    .article-outlet {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      color: var(--mid-gray);
+      margin-top: 0.18rem;
+      text-transform: uppercase;
+    }
+    .article-badge {
+      display: inline-block;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.56rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid var(--light-gray);
+      color: #aaa;
+      padding: 0.06rem 0.38rem;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+    .article-badge.opinion { border-color: var(--gold); color: var(--gold); }
+    .article-badge.analysis { border-color: #7a9abf; color: #7a9abf; }
+    .article-year {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.7rem;
+      color: #bbb;
+      text-align: right;
+    }
+    .writings-note {
+      margin-top: 1.8rem;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.76rem;
+      color: #bbb;
+      font-style: italic;
+    }
+
+    /* ── RESEARCH ── */
+    #research { background: var(--ink); color: var(--cream); }
+    #research .section-title { color: var(--cream); }
+    #research .section-header { border-bottom-color: #252525; }
+    .research-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .research-card {
+      border: 1px solid #222;
+      padding: 2rem;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+    .research-card:hover { border-color: var(--crimson); }
+    .research-card::before {
+      content: attr(data-num);
+      position: absolute;
+      top: 1.5rem; right: 1.8rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+    }
+    .research-tag {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.65rem;
+    }
+    .research-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.12rem;
+      font-weight: 700;
+      margin-bottom: 0.65rem;
+      color: var(--cream);
+    }
+    .research-card p {
+      font-size: 0.82rem;
+      color: #777;
+      line-height: 1.75;
+    }
+
+    /* ── EDUCATION ── */
+    #education { background: var(--warm-white); }
+    .edu-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 5rem;
+      align-items: start;
+    }
+    .edu-timeline { position: relative; padding-left: 3rem; }
+    .edu-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.6rem;
+      top: 0.5rem; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--crimson), transparent);
+    }
+    .edu-item { position: relative; margin-bottom: 3rem; }
+    .edu-item::before {
+      content: '';
+      position: absolute;
+      left: -2.45rem; top: 0.55rem;
+      width: 10px; height: 10px;
+      background: var(--crimson);
+      border-radius: 50%;
+      border: 2px solid var(--warm-white);
+      box-shadow: 0 0 0 2px var(--crimson);
+    }
+    .edu-date {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.67rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 0.35rem;
+    }
+    .edu-degree {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin-bottom: 0.28rem;
+    }
+    .edu-school { font-size: 0.87rem; color: var(--mid-gray); font-style: italic; }
+    .edu-detail { margin-top: 0.45rem; font-size: 0.81rem; color: #666; }
+
+    .edu-photo-col {}
+    .edu-photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: #e8e3da;
+      border: 1px solid var(--light-gray);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+      position: relative;
+    }
+    .edu-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .edu-photo .ph-icon {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      font-weight: 900;
+      font-style: italic;
+      color: rgba(0,0,0,0.07);
+    }
+    .edu-photo .ph-hint {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #bbb;
+    }
+    .edu-photo::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(181,22,28,0.1);
+      pointer-events: none;
+    }
+    .edu-photo-caption {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      margin-top: 0.75rem;
+      text-align: center;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--ink);
+      color: var(--cream);
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+    .contact-eyebrow {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.67rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 1.5rem;
+    }
+    .contact-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .contact-sub {
+      font-size: 0.9rem;
+      color: #777;
+      max-width: 480px;
+      margin: 0 auto 3rem;
+      font-style: italic;
+      line-height: 1.8;
+    }
+    .contact-links { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+    .contact-btn {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 0.85rem 2rem;
+      text-decoration: none;
+      border: 1px solid;
+      transition: all 0.2s;
+    }
+    .contact-btn.primary { background: var(--crimson); color: white; border-color: var(--crimson); }
+    .contact-btn.primary:hover { background: var(--crimson-dark); border-color: var(--crimson-dark); }
+    .contact-btn.secondary { background: transparent; color: var(--cream); border-color: #383838; }
+    .contact-btn.secondary:hover { border-color: var(--cream); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #060606;
+      padding: 2rem;
+      text-align: center;
+    }
+    footer p {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: #333;
+      text-transform: uppercase;
+    }
+    footer span { color: var(--crimson); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-eyebrow   { animation: fadeUp 0.7s ease both; }
+    .hero h1        { animation: fadeUp 0.7s 0.12s ease both; }
+    .hero-tagline   { animation: fadeUp 0.7s 0.25s ease both; }
+    .hero-meta      { animation: fadeUp 0.7s 0.38s ease both; }
+    .hero-photo-wrap{ animation: fadeUp 0.7s 0.18s ease both; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 880px) {
+      .hero-inner       { grid-template-columns: 1fr; }
+      .hero-photo-wrap  { display: none; }
+      .about-grid       { grid-template-columns: 1fr; }
+      .about-photo-col  { display: none; }
+      .about-quickinfo  { grid-template-columns: 1fr 1fr; }
+      .newsroom-grid    { grid-template-columns: 1fr 1fr; }
+      .research-grid    { grid-template-columns: 1fr; }
+      .edu-layout       { grid-template-columns: 1fr; }
+      .edu-photo-col    { display: none; }
+    }
+    @media (max-width: 540px) {
+      .newsroom-grid    { grid-template-columns: 1fr; }
+      .about-quickinfo  { grid-template-columns: 1fr; }
+      .article-item     { grid-template-columns: 1.5rem 1fr; }
+      .article-year     { display: none; }
+      nav               { gap: 0.9rem; }
+      nav a             { font-size: 0.66rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── MASTHEAD ── -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="masthead-name" href="#">Misbahul Haque<span>.</span></a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#newsrooms">Work</a>
+      <a href="#writings">Writings</a>
+      <a href="#research">Research</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg-text">MH</div>
+  <div class="hero-inner">
+    <div>
+      <p class="hero-eyebrow">Journalist &amp; Academic · United States</p>
+      <h1>Journalism that<br>holds <em>power</em><br>accountable.<br>Research<br>that matters.</h1>
+      <p class="hero-tagline">A career shaped by journalism and driven by ideas — giving readers not just what happened, but what it means. Now researching media and communication: what journalists say, why they say it, what they cannot say, and why they cannot.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          Currently
+          <strong>MA Journalism · Mizzou</strong>
+        </div>
+        <div class="hero-meta-item">
+          Research
+          <strong>Media &amp; Communication Law</strong>
+        </div>
+        <div class="hero-meta-item">
+          Journey
+          <strong>Dhaka → Missouri, USA</strong>
+        </div>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo">
+        <!--
+          TO ADD YOUR PHOTO:
+          1. Save your photo as "photo.jpg" in the same folder as this file
+          2. Replace the two lines below with: <img src="photo.jpg" alt="Misbahul Haque">
+        -->
+        <span class="ph-icon">MH</span>
+        <span class="ph-hint">Your photo here</span>
+      </div>
+      <span class="hero-photo-name">Misbahul Haque</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <h2 class="section-title">About</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p class="about-lead">"I became a journalist to find the right words. I became an academic to understand who decides which words are allowed."</p>
+        <div class="about-text">
+          <p>I am <strong>Misbahul Haque</strong> — a journalist-turned-academic from Dhaka, Bangladesh, now based in the United States. My career has been built on the conviction that ideas, rigorously argued, can change how people think — and that the laws governing the press shape what ideas are allowed into public life at all.</p>
+          <p>I spent most of my professional years in journalism, doing the slow, deliberate work of <strong>journalism</strong> — writing pieces that gave readers not just what happened, but what it means. I wrote about politics, media, religion, society, and culture for some of Bangladesh's most read publications.</p>
+          <p>That career spanned <strong>Daily Manabzamin</strong>, <strong>United News of Bangladesh (UNB)</strong>, <strong>The Business Standard</strong>, and <strong>Prothom Alo</strong> — Bangladesh's largest circulating daily. I also contributed to <strong>The Diplomat</strong>, covering the Asia-Pacific for an international audience, and to the <strong>Columbia Missourian</strong> here in the United States.</p>
+          <p>The questions that drove my journalism — about power, press freedom, and the boundaries of public discourse — eventually pulled me toward academic research. I wanted to understand not just what the law says journalists can do, but why, and whose interests those rules protect. That inquiry brought me to the <strong>Missouri School of Journalism</strong> at the University of Missouri, where I am pursuing a Master's in Journalism with a focus on <strong>media and communication law</strong>.</p>
+          <p>My academic foundation is in the humanities: I hold a Bachelor's and a Master's in <strong>World Religions and Culture from the University of Dhaka</strong>. That training — in how belief systems shape human societies and how narratives construct meaning — informs the way I approach both journalism and media scholarship.</p>
+        </div>
+        <div class="about-quickinfo">
+          <div class="qi-block">
+            <p class="qi-label">Publications</p>
+            <ul class="qi-list">
+              <li>Prothom Alo</li>
+              <li>The Business Standard</li>
+              <li>UNB</li>
+              <li>Daily Manabzamin</li>
+              <li>The Diplomat</li>
+              <li>Columbia Missourian</li>
+            </ul>
+          </div>
+          <div class="qi-block">
+            <p class="qi-label">Research</p>
+            <ul class="qi-list">
+              <li>Media Law</li>
+              <li>Communication Law</li>
+              <li>Press Freedom</li>
+              <li>Platform Regulation</li>
+            </ul>
+          </div>
+          <div class="qi-block">
+            <p class="qi-label">Languages</p>
+            <ul class="qi-list">
+              <li>Bengali (Native)</li>
+              <li>English (Fluent)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="about-photo-col">
+        <div class="about-photo">
+          <!--
+            TO ADD YOUR PHOTO:
+            Replace these two lines with: <img src="photo.jpg" alt="Misbahul Haque">
+          -->
+          <span class="ph-icon">MH</span>
+          <span class="ph-hint">Your photo here</span>
+        </div>
+        <p class="about-photo-caption">Misbahul Haque · Columbia, MO</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NEWSROOMS ── -->
+<section class="section" id="newsrooms">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <h2 class="section-title">Publications</h2>
+    </div>
+    <div class="newsroom-grid">
+      <div class="newsroom-card">
+        <span class="newsroom-icon">🗞</span>
+        <span class="newsroom-tag">English · Journalism</span>
+        <h3 class="newsroom-name">Prothom Alo</h3>
+        <p class="newsroom-desc">Bangladesh's largest English-language daily by circulation. Contributed journalism on politics, society, and media affairs to a national readership of millions.</p>
+      </div>
+      <div class="newsroom-card">
+        <span class="newsroom-icon">💼</span>
+        <span class="newsroom-tag">English · Journalism</span>
+        <h3 class="newsroom-name">The Business Standard</h3>
+        <p class="newsroom-desc">A leading English-language daily covering Bangladesh's political and economic landscape. Contributed journalism on public affairs and policy.</p>
+      </div>
+      <div class="newsroom-card">
+        <span class="newsroom-icon">📡</span>
+        <span class="newsroom-tag">English · News Agency</span>
+        <h3 class="newsroom-name">United News of Bangladesh</h3>
+        <p class="newsroom-desc">Bangladesh's premier English-language wire news agency, distributing content to hundreds of outlets nationally and internationally.</p>
+      </div>
+      <div class="newsroom-card">
+        <span class="newsroom-icon">📰</span>
+        <span class="newsroom-tag">Bengali · Journalism</span>
+        <h3 class="newsroom-name">Daily Manabzamin</h3>
+        <p class="newsroom-desc">One of Bangladesh's most-read Bengali dailies, known for independent journalism. Contributed journalism on culture, politics, and public life.</p>
+      </div>
+      <div class="newsroom-card">
+        <span class="newsroom-icon">🌏</span>
+        <span class="newsroom-tag">English · International</span>
+        <h3 class="newsroom-name">The Diplomat</h3>
+        <p class="newsroom-desc">An internationally respected magazine focused on Asia-Pacific current affairs. Contributed journalism on Bangladesh and South Asian politics for a global readership.</p>
+      </div>
+      <div class="newsroom-card">
+        <span class="newsroom-icon">🎓</span>
+        <span class="newsroom-tag">English · US</span>
+        <h3 class="newsroom-name">Columbia Missourian</h3>
+        <p class="newsroom-desc">A professional news organization based at the Missouri School of Journalism. Contributed journalism serving mid-Missouri communities under faculty editorial oversight.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WRITINGS ── -->
+<section class="section" id="writings">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <h2 class="section-title">Selected Writings</h2>
+    </div>
+    <p class="writings-intro">A curated list of published journalism — written for both Bengali and English-language audiences across Bangladesh, the Asia-Pacific, and the United States.</p>
+
+    <div class="writings-tabs">
+      <button class="tab-btn active" onclick="showTab('all', this)">All</button>
+      <button class="tab-btn" onclick="showTab('english', this)">English</button>
+      <button class="tab-btn" onclick="showTab('bengali', this)">Bengali</button>
+    </div>
+
+    <div class="tab-panel active" id="tab-all">
+      <ul class="article-list">
+        <li class="article-item">
+          <span class="article-num">01</span>
+          <div>
+            <a class="article-title" href="#" target="_blank" rel="noopener">
+              Add your article title here
+            </a>
+            <p class="article-outlet">The Diplomat</p>
+          </div>
+          <span class="article-year">2024</span>
+        </li>
+        <li class="article-item">
+          <span class="article-num">02</span>
+          <div>
+            <a class="article-title" href="#" target="_blank" rel="noopener">
+              Add your article title here
+            </a>
+            <p class="article-outlet">The Business Standard</p>
+          </div>
+          <span class="article-year">2023</span>
+        </li>
+        <li class="article-item">
+          <span class="article-num">03</span>
+          <div>
+            <a class="article-title" href="#" target="_blank" rel="noopener">
+              Add your article title here
+            </a>
+            <p class="article-outlet">Columbia Missourian</p>
+          </div>
+          <span class="article-year">2024</span>
+        </li>
+        <li class="article-item">
+          <span class="article-num">04</span>
+          <div>
+            <a class="article-title" href="#" target="_blank" rel="noopener">
+              Add your article title here
+            </a>
+            <p class="article-outlet">The Business Standard</p>
+          </div>
+          <span class="article-year">2022</span>
+        </li>
+        <li class="article-item">
+          <span class="article-num">05</span>
+          <div>
+            <a class="article-title" href="#" target="_blank" rel="noopener">
+              এখানে আপনার প্রবন্ধের শিরোনাম যোগ করুন
+            </a>
+            <p class="article-outlet">Prothom Alo</p>
+          </div>
+          <span class="article-year">2023</span>
+        </li>
+        <li class="article-item">
+          <span class="article-num">06</span>
+          <div>
+            <a class="article-title" href="#" target="_blank" rel="noopener">
+              এখানে আপনার প্রবন্ধের শিরোনাম যোগ করুন
+            </a>
+            <p class="article-outlet">Prothom Alo</p>
+          </div>
+          <span class="article-year">2022</span>
+        </li>
+        <li class="article-item">
+          <span class="article-num">07</span>
+          <div>
+            <a class="article-title" href="#" target="_blank" rel="noopener">
+              এখানে আপনার প্রবন্ধের শিরোনাম যোগ করুন
+            </a>
+            <p class="article-outlet">Daily Manabzamin</p>
+          </div>
+          <span class="article-year">2021</span>
+        </li>
+        <li class="article-item">
+          <span class="article-num">08</span>
+          <div>
+            <a class="article-title" href="#" target="_blank" rel="noopener">
+              এখানে আপনার প্রবন্ধের শিরোনাম যোগ করুন
+            </a>
+            <p class="article-outlet">United News of Bangladesh</p>
+          </div>
+          <span class="article-year">2020</span>
+        </li>
+      </ul>
+      <p class="writings-note">⟶ Replace placeholder titles and URLs with your actual published articles. Add as many rows as needed by copying the &lt;li&gt; pattern.</p>
+    </div>
+
+    <div class="tab-panel" id="tab-english">
+      <ul class="article-list">
+        <li class="article-item">
+          <span class="article-num">01</span>
+          <div>
+            <a class="article-title" href="#" target="_blank" rel="noopener">Add your article title here</a>
+            <p class="article-outlet">The Diplomat</p>
+          </div>
+          <span class="article-year">2024</span>
+        </li>
+        <li class="article-item">
+          <span class="article-num">02</span>
+          <div>
+            <a class="article-title" href="#" target="_blank" rel="noopener">Add your article title here</a>
+            <p class="article-outlet">The Business Standard</p>
+          </div>
+          <span class="article-year">2023</span>
+        </li>
+        <li class="article-item">
+          <span class="article-num">03</span>
+          <div>
+            <a class="article-title" href="#" target="_blank" rel="noopener">Add your article title here</a>
+            <p class="article-outlet">Columbia Missourian</p>
+          </div>
+          <span class="article-year">2024</span>
+        </li>
+        <li class="article-item">
+          <span class="article-num">04</span>
+          <div>
+            <a class="article-title" href="#" target="_blank" rel="noopener">Add your article title here</a>
+            <p class="article-outlet">The Business Standard</p>
+          </div>
+          <span class="article-year">2022</span>
+        </li>
+      </ul>
+      <p class="writings-note">⟶ Replace with your actual English-language articles and their live URLs.</p>
+    </div>
+
+    <div class="tab-panel" id="tab-bengali">
+      <ul class="article-list">
+        <li class="article-item">
+          <span class="article-num">01</span>
+          <div>
+            <a class="article-title" href="#" target="_blank" rel="noopener">এখানে আপনার প্রবন্ধের শিরোনাম যোগ করুন</a>
+            <p class="article-outlet">Prothom Alo</p>
+          </div>
+          <span class="article-year">2023</span>
+        </li>
+        <li class="article-item">
+          <span class="article-num">02</span>
+          <div>
+            <a class="article-title" href="#" target="_blank" rel="noopener">এখানে আপনার প্রবন্ধের শিরোনাম যোগ করুন</a>
+            <p class="article-outlet">Prothom Alo</p>
+          </div>
+          <span class="article-year">2022</span>
+        </li>
+        <li class="article-item">
+          <span class="article-num">03</span>
+          <div>
+            <a class="article-title" href="#" target="_blank" rel="noopener">এখানে আপনার প্রবন্ধের শিরোনাম যোগ করুন</a>
+            <p class="article-outlet">Daily Manabzamin</p>
+          </div>
+          <span class="article-year">2021</span>
+        </li>
+        <li class="article-item">
+          <span class="article-num">04</span>
+          <div>
+            <a class="article-title" href="#" target="_blank" rel="noopener">এখানে আপনার প্রবন্ধের শিরোনাম যোগ করুন</a>
+            <p class="article-outlet">United News of Bangladesh</p>
+          </div>
+          <span class="article-year">2020</span>
+        </li>
+      </ul>
+      <p class="writings-note">⟶ বাংলা ভাষায় লেখা প্রবন্ধের প্রকৃত শিরোনাম ও লিঙ্ক যোগ করুন।</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── RESEARCH ── -->
+<section class="section" id="research">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-number">04</span>
+      <h2 class="section-title">Research</h2>
+    </div>
+    <div class="research-grid">
+      <div class="research-card" data-num="01">
+        <p class="research-tag">Primary Focus</p>
+        <h3>Media &amp; Communication Law</h3>
+        <p>Examining the legal frameworks that govern journalism — from defamation and shield laws to platform liability and prior restraint — and how these structures shape what stories get told, by whom, and at what cost.</p>
+      </div>
+      <div class="research-card" data-num="02">
+        <p class="research-tag">Area of Interest</p>
+        <h3>Press Freedom &amp; Legal Accountability</h3>
+        <p>Analyzing how legislative and regulatory mechanisms constrain or enable journalistic work in South Asia and the United States, with attention to comparative press law and international human rights frameworks.</p>
+      </div>
+      <div class="research-card" data-num="03">
+        <p class="research-tag">Area of Interest</p>
+        <h3>Digital Media &amp; Platform Regulation</h3>
+        <p>Investigating the evolving legal landscape around digital publishing, online speech, and algorithmic curation — and what these developments mean for independent journalism and democratic public discourse.</p>
+      </div>
+      <div class="research-card" data-num="04">
+        <p class="research-tag">Interdisciplinary Background</p>
+        <h3>Religion, Culture &amp; Public Discourse</h3>
+        <p>Drawing on a grounding in World Religions and Culture to understand how belief, identity, and cultural narratives shape media framing, editorial choices, and the reception of news across different audiences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EDUCATION ── -->
+<section class="section" id="education">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-number">05</span>
+      <h2 class="section-title">Education</h2>
+    </div>
+    <div class="edu-layout">
+      <div class="edu-timeline">
+        <div class="edu-item">
+          <p class="edu-date">2024 – Present · Columbia, Missouri, USA</p>
+          <h3 class="edu-degree">Master of Arts in Journalism</h3>
+          <p class="edu-school">Missouri School of Journalism, University of Missouri</p>
+          <p class="edu-detail">Specialization in media and communication law. The Missouri School of Journalism, founded in 1908, is the world's oldest journalism school and consistently ranked among the world's top programs.</p>
+        </div>
+        <div class="edu-item">
+          <p class="edu-date">Dhaka, Bangladesh</p>
+          <h3 class="edu-degree">Master of Arts — World Religions and Culture</h3>
+          <p class="edu-school">University of Dhaka</p>
+          <p class="edu-detail">Advanced study in comparative religion, cultural theory, and the role of belief systems in shaping societies and public communication.</p>
+        </div>
+        <div class="edu-item">
+          <p class="edu-date">Dhaka, Bangladesh</p>
+          <h3 class="edu-degree">Bachelor of Arts — World Religions and Culture</h3>
+          <p class="edu-school">University of Dhaka</p>
+          <p class="edu-detail">Foundational studies in religious philosophy, anthropology, and cross-cultural communication — the humanistic lens through which I approach journalism and media scholarship.</p>
+        </div>
+      </div>
+      <div class="edu-photo-col">
+        <div class="edu-photo">
+          <!--
+            TO ADD YOUR PHOTO:
+            Replace these two lines with: <img src="campus-photo.jpg" alt="Misbahul Haque at Mizzou">
+          -->
+          <span class="ph-icon">MH</span>
+          <span class="ph-hint">Campus / profile photo</span>
+        </div>
+        <p class="edu-photo-caption">Missouri School of Journalism · Mizzou</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <p class="contact-eyebrow">Get in Touch</p>
+  <h2 class="contact-heading">Let's connect.</h2>
+  <p class="contact-sub">Whether you'd like to discuss research, exchange ideas on media law, collaborate on a piece, or simply say hello — I'd be glad to hear from you.</p>
+  <div class="contact-links">
+    <a href="/cdn-cgi/l/email-protection#61180e141321040c00080d4f020e0c" class="contact-btn primary">✉ Email Me</a>
+    <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" class="contact-btn secondary">LinkedIn</a>
+    <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener" class="contact-btn secondary">Twitter / X</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>© 2025 Misbahul Haque <span>·</span> Journalist &amp; Academic <span>·</span> Columbia, Missouri, USA</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  function showTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remo
